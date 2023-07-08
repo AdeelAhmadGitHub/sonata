@@ -1,0 +1,74 @@
+<svg id="sonata-loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3602.69 3602.69">
+  <style>
+    @keyframes sonata-loader {
+      0%, 27% {
+        transform: none;
+      }
+      40%, 77% {
+        transform: rotate(90deg);
+      }
+      90%, 100% {
+        transform: rotate(180deg);
+      }
+    }
+
+    #sonata-loader #loader-group {
+      transform-origin: 1801.34px 1801.34px;
+      animation: sonata-loader 2s cubic-bezier(0.61, 1, 0.88, 1) both infinite;
+    }
+
+    @keyframes sonata-circles {
+      0% {
+        transform: none;
+      }
+      60%, 100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #sonata-loader #circle-group {
+      transform-origin: 1801.34px 1801.34px;
+      animation: sonata-circles 1s cubic-bezier(0.37, 0, 0.63, 1) both infinite;
+    }
+
+    @keyframes sonata-bl {
+      0%, 60%, 100% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+      }
+      30% {
+        transform: translate(-400px, 400px);
+        animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+      }
+    }
+
+    @keyframes sonata-tr {
+      0%, 60%, 100% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+      }
+      30% {
+        transform: translate(400px, -400px);
+        animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+      }
+    }
+
+    #sonata-loader #circle-bl {
+      animation: sonata-bl 1s cubic-bezier(0.61, 1, 0.88, 1) both infinite;
+    }
+
+    #sonata-loader #circle-tr {
+      animation: sonata-tr 1s cubic-bezier(0.61, 1, 0.88, 1) both infinite;
+    }
+  </style>
+  <g id="loader-group">
+    <path d="M2113.53,1328.33a85.15,85.15,0,1,0-170.3,0V2482.46a85.15,85.15,0,1,0,170.3,0Z" fill="#fd5201" fill-rule="evenodd"/>
+    <path d="M1974.27,1659.46a85.15,85.15,0,0,0,0-170.3h-854a85.15,85.15,0,1,0,0,170.3Z" fill="#fd5201" fill-rule="evenodd"/>
+    <g id="circle-group">
+      <path id="circle-tr" d="M2255.41,1205.36a141.9,141.9,0,1,1-141.88,141.92A142,142,0,0,1,2255.41,1205.36Zm0-170.85c172.66,0,312.77,140.11,312.77,312.77S2428.07,1660,2255.41,1660s-312.73-140.11-312.73-312.74S2082.79,1034.51,2255.41,1034.51Z" fill="#fd5201" fill-rule="evenodd"/>
+      <path id="circle-bl" d="M1347.28,2113.53a141.9,141.9,0,1,1-141.92,141.88A142,142,0,0,1,1347.28,2113.53Zm0-170.85c172.63,0,312.74,140.11,312.74,312.73s-140.11,312.77-312.74,312.77-312.77-140.11-312.77-312.77S1174.62,1942.68,1347.28,1942.68Z" fill="#fd5201" fill-rule="evenodd"/>
+    </g>
+    <path d="M1659.46,1120.23a85.15,85.15,0,1,0-170.3,0v1121a85.15,85.15,0,0,0,170.3,0Z" fill="#fd5201" fill-rule="evenodd"/>
+    <path d="M1608.18,2113.53a85.15,85.15,0,1,1,0-170.3h874.28a85.15,85.15,0,1,1,0,170.3Z" fill="#fd5201" fill-rule="evenodd"/>
+  </g>
+</svg>

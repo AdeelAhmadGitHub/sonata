@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebSocket Client</title>
+    </head>
+    <body>
+        <div id="notification-container"></div>
+
+        <script>
+            var user_handle = 'ali00'; // Replace with the actual user ID
+            var wsServer = "ws://sonata.seromatic.com:9501";
+            var websocket = new WebSocket(wsServer);
+
+            websocket.onopen = function (evt) {
+                console.log("Connected to WebSocket server.");
+                // var username = prompt("Choose your username:");
+                var appUsername = {
+                    "user_handle": "ali00"
+                }
+                websocket.send(JSON.stringify(appUsername));
+                getFeed();
+                latestUsers();
+                loginUser();
+            };
+
+            websocket.onclose = function (evt) {
+                console.log("Disconnected");
+            };
+
+            websocket.onerror = function (evt) {
+                console.log("Error occurred: " + evt.data);
+            };
+
+            websocket.onmessage = function (event) { // var message = JSON.parse(event.data);
+                console.log("Feed: " + event.data);
+                // Handle incoming messages
+            };
+
+            function getFeed() {
+
+                var appUsername = {
+                    "request_type": "explore_feeds",
+                    "timezone": "Asia/Karachi",
+                    "user_handle": "",
+                    "page": 1
+                }
+                websocket.send(JSON.stringify(appUsername));
+
+            }
+            function latestUsers() {
+
+                var appUsername = {
+                    "request_type": "view_side_bar",
+                    "user_handle": "",
+                    "page": 1
+                }
+                websocket.send(JSON.stringify(appUsername));
+
+            }
+
+            function loginUser() {
+
+                var appUsername = {
+                    "request_type": "login_user",
+                    "email": "ali@gmail.com",
+                    "password": 1234,
+                    "user_ip": "192.168.11.10"
+                }
+                websocket.send(JSON.stringify(appUsername));
+
+            }
+        </script>
+
+    </body>
+</html>
